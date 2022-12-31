@@ -5,35 +5,62 @@
         <meta charset="utf-8">
         <title> Home </title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
-        <center><h1> Home</h1></center>
+        <left><h1> Chat App</h1></left>
 
-        <nav>
+        <nav class="navbar navbar-light" style="background-color: #c2cebfe1;">
         <ul class="nav">
+            
+            {% if user.is_authenticated %}
             <li class="nav-item">
+                <a class="nav-link" href="{% url 'chat' %}">Chat</a>
+            </li>
+            <li class="nav-item ml-auto">
+                <a class="nav-link" href="{% url 'logout' %}?next=/myapp/">Logout</a>
+            </li>
+              {% else %}
+              <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">Login</a>
               </li>
             <li class="nav-item">
               <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="{% url 'chat' %}">Chat</a>
-              </li>
+            {% endif %}
           </ul>
           </nav>
 
      
         </head>
         <body>
-            <div class="card" style="width: 18rem;">
-                <img src="{% static 'image/cat.jpg' %}" class="card-img-top" alt="...">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                  <a href="#" class="btn btn-primary">Go somewhere</a>
+          
+            <br>
+            <div class="container">
+                <div class="row justify-content-end">
+                  <div class="col-15">
+                    <img src="{% static 'image/image1.png' %}" align="left"style="width:128px;height:128px;" class="pull-left">
+                  </div>
+                  <center>
+                    <div class="pull-left">
+                          <h1>Better 
+                            <br>
+                            collaboration
+                            <br>
+                            for everyone
+                          </h1>
+                          <p>Easiest way to team up with anyone. Allows you to see everything in one place..</p>
+                          <a href="{% url 'chat' %}" class="btn btn-primary">Explore</a>
+                          <div class="row justify-content-end">
+                          <div class="col-5">
+                    <img src="{% static 'image/image2.jpg' %}" align="left" style="float:right;width:400px;height:400px;" class="pull-left">
+                    </div>
+                    </div>
+                </div>
+                    </center>
                 </div>
               </div>
+            
         </body>
         </html>
 
-     
+
+        
 

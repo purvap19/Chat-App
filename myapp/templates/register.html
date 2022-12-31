@@ -4,17 +4,29 @@
     <head>
         <title> Sign Up </title>
         <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
-
-        <nav>
-            <ul class="nav flex-column">
+        <nav class="navbar navbar-light" style="background-color: #c2cebfe1;">
+            <ul class="nav">
+                
+                {% if user.is_authenticated %}
                 <li class="nav-item">
-                  <a class="nav-link" href="{% url 'home' %}">Home</a>
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'chat' %}">Chat</a>
+                </li>
+                <li class="nav-item ml-auto">
+                    <a class="nav-link" href="{% url 'logout' %}?next=/myapp/">Logout</a>
+                </li>
+                  {% else %}
+                  <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
                 <li class="nav-item">
                   <a class="nav-link" href="{% url 'login' %}">Log In</a>
                 </li>
+                {% endif %}
               </ul>
-            </nav>
+              </nav>
             
     </head>
     <body>
@@ -28,7 +40,9 @@
 
 <center>
     <br>
-        <h2>Sign Up</h2>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Sign Up</h5>
         <form action="" method="POST">
             {% csrf_token %}
             {% for field in form %}
@@ -36,9 +50,13 @@
                     <p> {{ field }}</p> 
                 </div>
             {% endfor %}
-            <button type="submit">Sign Up</button>
+            <button type="submit" class="btn btn-primary">Sign Up</button>
         </form>
         <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+        </div>
+        </div>
         </center>
     </body>
 </html>
+
+
