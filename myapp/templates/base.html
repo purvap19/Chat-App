@@ -4,14 +4,36 @@
     <head>
         <meta charset="utf-8">
         <title> Home </title>
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
         <center><h1> Home</h1></center>
 
         <nav>
-            <a style="margin: 10px" href="{% url 'login' %}">Log In</a>
-            <a style="margin: 10px" href="{% url 'register' %}">Register</a>
-   
-        </nav>
+        <ul class="nav">
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Sign Up</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'chat' %}">Chat</a>
+              </li>
+          </ul>
+          </nav>
+
      
         </head>
+        <body>
+            <div class="card" style="width: 18rem;">
+                <img src="{% static 'image/cat.jpg' %}" class="card-img-top" alt="...">
+                <div class="card-body">
+                  <h5 class="card-title">Card title</h5>
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="btn btn-primary">Go somewhere</a>
+                </div>
+              </div>
+        </body>
         </html>
+
+     
+

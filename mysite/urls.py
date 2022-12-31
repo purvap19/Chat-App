@@ -21,6 +21,7 @@ urlpatterns = [
     path('home/', include('myapp.urls')),
     path('login/', include('login.urls')),
     path('register/', include('register.urls')),
+    path('chat/', include('chat.urls')),
     path('admin/', admin.site.urls),
     path('', TemplateView.as_view(template_name='index.html')),
 ]

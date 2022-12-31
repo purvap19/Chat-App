@@ -11,6 +11,7 @@ def loginView(request):
         if form.is_valid():
             user = form.get_user()
             login(request, user)
+            return redirect('home')
     else:
         form = LoginForm()
     context = {'form': form}

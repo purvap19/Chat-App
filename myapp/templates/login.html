@@ -3,15 +3,23 @@
 <html>
     <head>
         <title> Log In </title>
-        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+
+        
     </head>
     <nav>
-    <a style="margin: 10px" href="{% url 'home' %}">Home</a>
-    <a style="margin: 10px" href="{% url 'register' %}">Register</a>
-    </nav>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'register' %}">Register</a>
+            </li>
+          </ul>
+        </nav>
     <body>
             <center>
-                <font face="sans-serif";
                 <br>
             <h2>Log In</h2>
             <form action="{% url 'login' %}" method="POST">
@@ -20,7 +28,6 @@
             <br>
             <button type="submit">Log In</button>
             </form>
-        </font>
             </center>
     </body>
 </html>

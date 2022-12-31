@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Log In </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}">
+
+
+        
+    </head>
+    <nav>
+        <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link" href="{% url 'home' %}">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'chat' %}">Chat</a>
+              </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+              </li>
+          </ul>
+        </nav>
+
+        <div class="container text-center">
+            <div class="row">
+              <div class="col">
+                Chat
+              </div>
+              <div class="col">
+                Want to start a topic or group? 
+              </div>
+            </div>
+          </div>
+</html>
