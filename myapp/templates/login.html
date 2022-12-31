@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Log In </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    </head>
+    <nav>
+    <a style="margin: 10px" href="{% url 'home' %}">Home</a>
+    <a style="margin: 10px" href="{% url 'register' %}">Register</a>
+    </nav>
+    <body>
+            <center>
+                <font face="sans-serif";
+                <br>
+            <h2>Log In</h2>
+            <form action="{% url 'login' %}" method="POST">
+                {% csrf_token %}
+                {{ form.as_p }}
+            <br>
+            <button type="submit">Log In</button>
+            </form>
+        </font>
+            </center>
+    </body>
+</html>

@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Sign Up </title>
+        <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+
+        
+        <nav>
+            <a style="margin: 10px" href="{% url 'home' %}">Home</a>
+            <a style="margin: 10px" href="{% url 'login' %}">Login</a>
+            </nav>
+            
+    </head>
+    <body>
+        {% if form.errors %}
+        {% for field in form %}
+            {% for error in field.errors %}
+                <p div class="alert alert-warning" role="alert"> {{ error }} </div></p>
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
+<center>
+    <font face="sans-serif";
+    <br>
+        <h2>Sign Up</h2>
+        <form action="" method="POST">
+            {% csrf_token %}
+            {% for field in form %}
+                <div>
+                    <p> {{ field }}</p> 
+                </div>
+            {% endfor %}
+            <button type="submit">Sign Up</button>
+        </form>
+        <p>Already have an account? <a href="{% url 'login' %}">Log In</a></p>
+    </font>
+        </center>
+    </body>
+</html>
