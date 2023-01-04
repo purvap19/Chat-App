@@ -1,5 +1,10 @@
 from django.shortcuts import render
+from .forms import EmailForm
 
 # Create your views here.
 def chatView(request):
-    return render(request, 'chat.html' )
+    form = EmailForm()
+    context = {'form': form}
+    return render(request, 'chat.html', context )
+
+

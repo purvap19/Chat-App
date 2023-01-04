@@ -132,3 +132,10 @@ STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'myapp/static'), )
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+DEFAULT_FROM_EMAIL = 'weatherapp495@gmail.com'
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'weatherapp495@gmail.com'
+EMAIL_HOST_PASSWORD = 'lkqeouclcekmjfem'
+EMAIL_USE_TLS = True
